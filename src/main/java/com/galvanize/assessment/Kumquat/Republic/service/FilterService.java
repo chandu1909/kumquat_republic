@@ -21,10 +21,10 @@ public class FilterService {
         this.repository = repository;
     }
 
-    public  Products filterByBrand(String brand) {
+    public  Iterable<Products> filterByBrand(String brand) {
 
 
-        return products;
+        return (Iterable<Products>) repository; //not yet created enums for the brand
     }
 
     public Products filterByColor(String color) {
@@ -32,8 +32,8 @@ public class FilterService {
         return products;
     }
 
-    public Products filterByPriceRange(double minprice, double maxprice) {
+    public Iterable<Products>filterByPriceRange(double minprice, double maxprice) {
 
-        return products;
+        return null;
     }
 }
