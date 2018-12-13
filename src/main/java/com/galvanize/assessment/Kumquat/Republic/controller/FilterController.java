@@ -48,5 +48,19 @@ public class FilterController {
         return filteredProducts;
     }
 
+    @GetMapping("/pricerange/{minprice}/{maxprice}")
+    public Products filterByPriceRange(@PathVariable double minprice, @PathVariable double maxprice){
+
+        Products filteredProducts = null;
+
+        try{
+            filteredProducts = filterService.filterByPriceRange(minprice,maxprice);
+
+        }catch (Exception e){
+            slf4jLogger.error("no items found within the price... filtered data is null");
+        }
+        return filteredProducts;
+    }
+
 
 }
