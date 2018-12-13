@@ -1,6 +1,8 @@
 package com.galvanize.assessment.Kumquat.Republic.service;
 
 import com.galvanize.assessment.Kumquat.Republic.model.Products;
+
+import com.galvanize.assessment.Kumquat.Republic.repo.Repository;
 import org.springframework.stereotype.Service;
 
 
@@ -13,6 +15,11 @@ public class FilterService {
 
     private Products products;
 
+    private final Repository repository;
+
+    public FilterService(Repository repository) {
+        this.repository = repository;
+    }
 
     public  Products filterByBrand(String brand) {
 
